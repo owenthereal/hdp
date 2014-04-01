@@ -12,7 +12,7 @@ func ProxyServer(w http.ResponseWriter, req *http.Request) {
 		fmt.Printf("%s - %s\n", k, strings.Join(v, ","))
 	}
 
-	fmt.Fprintf(w, "hello, world!\n")
+	fmt.Fprintln(w, "ok")
 }
 
 func main() {
