@@ -1,4 +1,4 @@
-Copyright (c) 2013 Jingwen Owen Ou
+Copyright (c) 2014 Jingwen Owen Ou
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
