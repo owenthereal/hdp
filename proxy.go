@@ -47,7 +47,9 @@ func reqPath(req *http.Request) string {
 	path := req.URL.Path
 	query := []string{}
 	for k, v := range req.URL.Query() {
-		query = append(query, fmt.Sprintf("%s=%s", k, strings.Join(v, ",")))
+		for _, vv := range v {
+			query = append(query, fmt.Sprintf("%s=%s", k, vv))
+		}
 	}
 
 	if len(query) > 0 {
