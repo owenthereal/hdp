@@ -30,6 +30,8 @@ HDP listening on localhost:12345
 > Accept: */*
 ```
 
+See a [demo](http://showterm.io/d4b406229385b2d7cc8c0).
+
 License
 -------
 
