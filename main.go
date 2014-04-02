@@ -9,7 +9,8 @@ import (
 )
 
 var (
-	flagPort = flag.String("p", "12345", "port for http debug proxy")
+	flagHost = flag.String("h", "localhost", "host")
+	flagPort = flag.String("p", "12345", "port")
 )
 
 func showUsage() {
@@ -26,8 +27,9 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", Proxy)
-	fmt.Printf("HTTP Debug Proxy starting at %s...\n", *flagPort)
-	err := http.ListenAndServe(":"+*flagPort, nil)
+	fmt.Println(Figlet)
+	fmt.Printf("HDP listening on %s:%s\n", *flagHost, *flagPort)
+	err := http.ListenAndServe(*flagHost+":"+*flagPort, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
