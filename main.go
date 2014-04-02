@@ -28,7 +28,7 @@ func main() {
 
 	http.HandleFunc("/", Proxy)
 	fmt.Println(Figlet)
-	fmt.Printf("HDP listening on %s:%s\n", *flagHost, *flagPort)
+	fmt.Printf("HDP listening on %s:%s\n\n", *flagHost, *flagPort)
 	err := http.ListenAndServe(*flagHost+":"+*flagPort, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

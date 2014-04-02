@@ -45,15 +45,10 @@ func display(format string, a ...interface{}) {
 
 func reqPath(req *http.Request) string {
 	path := req.URL.Path
-	query := []string{}
-	for k, v := range req.URL.Query() {
-		for _, vv := range v {
-			query = append(query, fmt.Sprintf("%s=%s", k, vv))
-		}
-	}
+	query := req.URL.RawQuery
 
-	if len(query) > 0 {
-		path = fmt.Sprintf("%s?%s", path, strings.Join(query, "&"))
+	if query != "" {
+		path = fmt.Sprintf("%s?%s", path, query)
 	}
 
 	return path
